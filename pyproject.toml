@@ -1,7 +1,7 @@
 [project]
 name = "caretekk-task"
 version = "0.1.0"
-description = "Add your description here"
+description = "Secure, idempotent patient messaging API for the Caretekk backend assessment"
 readme = "README.md"
 authors = [
     { name = "rokari-19", email = "oshomahiyelobu1@gmail.com" }
@@ -11,9 +11,6 @@ dependencies = [
     "django>=6.1.3",
     "djangorestframework>=3.18.3",
 ]
-
-[project.scripts]
-caretekk-task = "caretekk_task:main"
 
 [build-system]
 requires = ["uv_build>=0.13.5,<0.14.0"]
