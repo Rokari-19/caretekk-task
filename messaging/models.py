@@ -80,11 +80,11 @@ class Message(models.Model):
             models.CheckConstraint(
                 condition=(
                     Q(
-                        sender_type=SenderType.PATIENT,
+                        sender_type="patient",
                         external_message_id__isnull=False,
                     )
                     | Q(
-                        sender_type=SenderType.DOCTOR,
+                        sender_type="doctor",
                         external_message_id__isnull=True,
                     )
                 ),
