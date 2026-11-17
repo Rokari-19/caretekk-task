@@ -4,13 +4,16 @@ Django settings for the Caretekk messaging assessment.
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 from django.core.exceptions import ImproperlyConfigured
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
-DEBUG = os.getenv("DEBUG", "True").strip().lower() in {"1", "true", "yes", "on"}
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "local-development-only-change-me")
+DEBUG = os.getenv('DEBUG')
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+
 if not DEBUG and not os.getenv("DJANGO_SECRET_KEY"):
     raise ImproperlyConfigured("DJANGO_SECRET_KEY must be set when DEBUG is disabled.")
 
