@@ -27,7 +27,7 @@ def receive_patient_message(*, external_event_id, consultation, content):
 
     same_event_payload = (
         message.sender_type == Message.SenderType.PATIENT
-        and message.consultation_id == consultation.pk
+        and message.consultation.pk == consultation.pk
         and message.content == content
     )
     if not created and not same_event_payload:

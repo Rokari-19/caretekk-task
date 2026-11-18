@@ -26,7 +26,7 @@ class IncomingMessageSerializer(serializers.Serializer):
                 {"consultation_id": "Consultation does not exist."}
             )
 
-        if consultation.patient_id != patient.pk:
+        if consultation.patient.pk != patient.pk:
             raise serializers.ValidationError(
                 {
                     "consultation_id": (
